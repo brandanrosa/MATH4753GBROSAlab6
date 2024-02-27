@@ -1,0 +1,71 @@
+---
+title: "mybincon"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{mybincon}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(MATH4753GBROSAlab6)
+```
+
+# Introduction
+
+This package contains an S3 OOP function, `mybincon`, which performs a simulation of the binomial distribution. It take three items as arguments: `iter` - the number of iterations for the simulation, `n` - the number of each sample, and `p` - the probability. The function produces a bar-plot list containing the following: the simulated probabilities, the true proportion probabilities, the Euclidean Squared Distance between the simulated and the true proportions, the midpoits of the unseen bars, and the simulated matrix.
+
+Also in this package is an accompanying S3 method, `summary.MATH4753GLab6`. This returns a vector of the sample standard deviations with a length of the chosen number of iterations, `iter`.
+
+# Example
+
+The following is an example of the function and it's summary using the following parameters: $iter = 10$, $n = 10$, $p = 0.6$.
+
+```{r}
+l <- mybincon(iter = 10, n = 10, p = 0.6)
+l
+```
+
+```{r}
+summary(l)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

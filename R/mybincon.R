@@ -28,7 +28,7 @@ mybincon = function(iter, n, p, ...) {
       prob = c(p, 1 - p)
     )
 
-    succ[i] <- sum(sam_mat[, i])
+  succ[i] <- sum(sam_mat[, i])
   }
 
   succ.tab <- table(factor(succ, levels = 0:n))
@@ -49,5 +49,5 @@ mybincon = function(iter, n, p, ...) {
   esd <- stats::dist(rbind(st, tp))
 
   l <- list(estp = st, truep = tp, EUC_DIST = esd, mdpts = mdpts, sim = sam_mat)
-  structure(.Data =l, class = "MATH4753GLab6")
+  structure(.Data = l, class = "MATH4753GLab6")
 }

@@ -35,19 +35,19 @@ mybincon = function(iter, n, p, ...) {
 
   st <- succ.tab / iter
 
-  mdpts <- barplot(
+  mdpts <- graphics::barplot(
     height = st,
-    col = rgb(red = 0.15, green = st, blue = 0, alpha = .75),
+    col = grDevices::rgb(red = 0.15, green = st, blue = 0, alpha = .75),
     main = "Binomial Simulation - Brandan Rosa",
     xlab = "Number of Successes",
+    plot = FALSE,
     ...
   )
 
-  tp <- dbinom(0:n, size = n, prob = p)
+  tp <- stats::dbinom(0:n, size = n, prob = p)
 
-  esd <- dist(rbind(st, tp))
+  esd <- stats::dist(rbind(st, tp))
 
-  l <- list(estp = st, tp = tp, esd = esd, mdpts = mdpts, sim = sam_mat)
-  #invisible(l)
-  l
+  l <- list(estp = st, truep = tp, EUC_DIST = esd, mdpts = mdpts, sim = sam_mat)
+  structure(.Data =l, class = "MATH4753GLab6")
 }
